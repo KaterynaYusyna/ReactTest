@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  background: #fafbfc;
+}
+
+.form__block {
+  border-radius: 4px;
+  border: solid 1px #ebedf8;
+  background-color: #fff;
+  width: 427px;
+  margin: 110px auto;
+  padding: 2.3vw 3.9vw;
+}
+
+.form__block .form__title {
+  font-size: 36px;
+  letter-spacing: 0.25px;
+  color: #454545;
+  margin-top: 0;
+  font-weight: normal;
+  text-align: center;
+}
+
+.form__block .form__attention {
+  margin: 0;
+  text-align: center;
+  color: #9398a2;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.form__block .form__attention a {
+  color: #0a7abf;
+  padding-left: 5px;
+}
+
+.form__block .MuiFormControl-marginDense,
+.form__block .MuiFormControl-marginNormal,
+.form__block .MuiFormControl-root {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.form__block .MuiFormControl-marginDense .MuiInputBase-input,
+.form__block .MuiFormControl-marginNormal .MuiInputBase-input,
+.form__block .MuiFormControl-root .MuiInputBase-input {
+  color: #9398a2;
+  font-family: "Open Sans", sans-serif;
+}
+
+.form__block .MuiFormControlLabel-root {
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.form__block .MuiFormControlLabel-root .MuiCheckbox-root {
+  padding: 0;
+  padding-right: 10px;
+}
+
+.form__block .MuiFormControlLabel-root .MuiCheckbox-root:hover {
+  background-color: #fff;
+}
+
+.form__block .MuiFormControlLabel-root .MuiCheckbox-colorSecondary.Mui-checked {
+  color: #46b688;
+}
+
+.form__block .MuiTypography-body1 {
+  color: #9398a2;
+  font-weight: normal;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  line-height: normal;
+}
+
+.form__block .form__button {
+  width: 100%;
+  height: 42px;
+  border-radius: 3px;
+  background-color: #46b688;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.47px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  margin: 30px 0;
+}
+
+.form__block .form__button:hover {
+  background-color: #399f81;
+  cursor: pointer;
+}
+
+.form__block .form__button.active {
+  background-color: #288077;
+}
