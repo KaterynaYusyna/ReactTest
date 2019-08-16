@@ -40,11 +40,23 @@ body {
     .MuiFormControl-marginNormal,
     .MuiFormControl-root {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         margin-top: 0;
+        .MuiInputBase-root {
+            line-height: 1em;
+        }
         .MuiInputBase-input {
             color: $font-color;
             font-family: $font-family;
+        }
+    }
+    .form__codes {
+        display: flex;
+        .MuiFormControl-root {
+            width: 35%;
+        }
+        .dense {
+            width: 65%;
         }
     }
     .MuiFormControlLabel-root {

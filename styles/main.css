@@ -41,8 +41,14 @@ body {
 .form__block .MuiFormControl-marginNormal,
 .form__block .MuiFormControl-root {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   margin-top: 0;
+}
+
+.form__block .MuiFormControl-marginDense .MuiInputBase-root,
+.form__block .MuiFormControl-marginNormal .MuiInputBase-root,
+.form__block .MuiFormControl-root .MuiInputBase-root {
+  line-height: 1em;
 }
 
 .form__block .MuiFormControl-marginDense .MuiInputBase-input,
@@ -50,6 +56,18 @@ body {
 .form__block .MuiFormControl-root .MuiInputBase-input {
   color: #9398a2;
   font-family: "Open Sans", sans-serif;
+}
+
+.form__block .form__codes {
+  display: flex;
+}
+
+.form__block .form__codes .MuiFormControl-root {
+  width: 35%;
+}
+
+.form__block .form__codes .dense {
+  width: 65%;
 }
 
 .form__block .MuiFormControlLabel-root {
