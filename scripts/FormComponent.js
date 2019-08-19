@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {map as _map} from 'lodash';
+import axios from 'axios';
 
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -10,6 +11,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Button from '@material-ui/core/Button';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
@@ -18,24 +20,29 @@ import '../styles/main.scss';
 class FormComponent extends Component {
     state = {
         firstName: '',
+        nameError: '',
         optionsCounties: [],
-        phone: null,
+        phone: '',
+        phoneError: '',
         email: '',
+        emailError: '',
         optionsCodes: [],
         password: '',
         passwordConfirm: '',
         showPassword: false,
         showPasswordConfirm: false,
         checked: false,
-        country: null,
-        codes: null
+        country: '',
+        countryError: '',
+        codes: '',
+        codesError: '',
     }
 
     handleChange = (name, e) => {
         this.setState({
             [name]: e.target.value
         });
-	};
+    };
 
     componentDidMount() {
         let url = "http://0.0.0.0:3002/countries";
@@ -61,6 +68,30 @@ class FormComponent extends Component {
         })
     }
 
+    handleSubmit() {
+    
+        let data = {
+            firstName: this.state.firstName,
+            phone: this.state.phone,
+            email: this.state.email,
+            password: this.state.password,
+            passwordConfirm: this.state.passwordConfirm,
+            country:  this.state.country,
+            codes:  this.state.codes,
+            checked: this.state.checked
+        };
+
+            let url2 = "http://0.0.0.0:3002/register";
+            axios.post(url2, {
+                JSON.stringify(data)
+            }).then(req => {
+                console.log('Req done: ', req)
+              }).catch(err => {
+                console.error('Error: ', err)
+              })
+
+    }
+
     render() {
         const { 
             optionsCounties,
@@ -72,13 +103,15 @@ class FormComponent extends Component {
             showPassword, 
             passwordConfirm,
             showPasswordConfirm,
-            firstName
+            firstName,
+            nameError
         } = this.state;
+        console.log(this.state);
         return (
             <div className='container'>
                 <div className='form__block'>
                     <h2 className="form__title">Sign up</h2>
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                         <TextField
                             label="Name"
                             className='textField dense'
@@ -184,10 +217,10 @@ class FormComponent extends Component {
                             }
                             label="Yes, I'd like to recieve the very occasional email with information on new services and discounts"
                         />
- 
-                        <button className='form__button'>
+                        <Button type="submit" variant="contained" className="form__button">
                             Create an account
-                        </button>
+                        </Button>
+                        
                     </form>
                     <p className="form__attention">
                         Already have a 24Slides account? 
